@@ -134,6 +134,87 @@ const Login = Vue.component('login', {
     }
 });
 
+const register = Vue.component('register',{
+  template:`
+  <div>
+    <h2>Register</h2>
+    <div>
+    
+    <form id="registerform" @submit.prevemt="photoupload" method ='POST' enctype="multipart/form-data">
+      <div>
+        <div class="fgroup">
+          <label>Username</label>
+        </div>
+        
+        <div class="fgroup">
+          <label>Password</label>
+        </div>
+      
+        <div class="fgroup">
+          <label>First Name</label>
+        </div>
+        
+        <div class="fgroup">
+          <label>Last Name</label>
+        </div> 
+        
+        <div class="fgroup">
+          <label>Email</label>
+        </div>      
+        
+        <div class="fgroup">
+          <label>Location</label>
+        </div>      
+        
+        <div class="fgroup">
+          <label>Biography</label>
+        </div>      
+        
+        <div class="btn">
+          <label>Photo</label>
+          <button id="browbtn">Browse</btn>
+          
+        </div> 
+        
+       </div>
+       <button class="subbtn" type="submit">Submit</button>
+       </form>
+    </div>
+  </div>
+  `,
+  data: function() {
+    return {
+      response: [],
+      error: []
+    };
+  },
+  methods: {
+    photoupload : function() {
+      let self = this;
+      let registerform = document.getElementById('registerform');
+      let form_data = new FormData(registerform);
+      fetch("/api/users/register",{
+        method: 'POST',
+        body: form_data,
+        headers: {
+          'X-CSRFToken': token
+        },
+        credentials: 'same-origin'
+      })
+      .then(function(jsonResponse){
+        return response.json();
+      })
+      .then(function (jsonResponse){
+        console.log(jsonResponse);
+      })
+      .catch(function(error){
+        console.log(error);
+      });
+    }
+  }
+    
+})
+
 // Define Routes
 const router = new VueRouter({
     routes: [
