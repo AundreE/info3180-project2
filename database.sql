@@ -9,7 +9,7 @@ create table Posts(
     primary key(id)
 );
 create table Users(
-    id int auto_increment not null,
+    user_id int auto_increment not null,
     username varchar(40),
     password varchar(40),
     firstname varchar(30),

@@ -1,4 +1,4 @@
-body
+/*body
 {
     padding-top: 5rem;
 }
@@ -13,7 +13,7 @@ body
 .upload-btn-wrapper {
   position: relative;
   overflow: hidden;
-  /*display: inline-block;*/
+  /*display: inline-block;
 }
 
 #btn {
@@ -69,4 +69,68 @@ ul
     border-radius: 5px;
     width: 100%;
     height: 100%;
+}
+
+/*main styling*/
+body {
+    padding-top: 5rem;
+    background-color: #f5efe6;
+}
+
+.center{
+    margin: 0 auto;
+}
+
+.small-logo{
+    width: 30px;
+    height: 30px;
+}
+
+.landing-container{
+    text-align: center;
+    margin: 15% 0%;
+}
+
+.landing-container-child{
+    float: left;
+    width: 100%;
+}
+
+
+.float-clear{
+    clear: both;
+}
+
+#landing-img{
+    border: 1px solid gray;
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+}
+
+
+/*login styling*/
+.card-body #submit{
+    width: 100%;
+    height: 80%;
+    margin-top: 13%;
+}
+
+.card{
+    width: 25rem;
+    /*height: 18rem;*/
+    box-shadow: 0.5px 0.5px 10px grey;
+    border-radius: 2px;
+    padding: 24px
+}
+
+.card-header{
+    width: 25rem;
+    border: none;
+    background: transparent;
+    padding-left:0;
+}
+
+#local{
+    margin-top:3%;
 }

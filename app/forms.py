@@ -3,7 +3,6 @@ from wtforms import StringField,PasswordField
 from wtforms.fields import TextAreaField, SelectField
 from flask_wtf.file import FileField, FileRequired, FileAllowed
 from wtforms.validators import DataRequired, Email
-from app import allowed_extensions
 
 
 class RegisterForm(FlaskForm):
@@ -14,7 +13,7 @@ class RegisterForm(FlaskForm):
     email = StringField("Email", validators = [DataRequired(), Email()])
     location = StringField("Location", validators = [DataRequired()])
     biography = TextAreaField("Biography", validators = [DataRequired()])
-    photo = FileField(validators=[FileRequired(), FileAllowed(allowed_extensions)])
+    photo = FileField(validators=[FileRequired(), FileAllowed(['jpg', 'png'], 'Images only!')])
 
 class LoginForm(FlaskForm):
     username = StringField('Username', validators=[DataRequired()])
